@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+    unit-converter:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: unit-converter
+      networks:
+        - unit-converter
+      ports:
+        - "8080:8080"
+      stdin_open: true
+      tty: true
+      expose:
+        - "8080"
+      volumes:
+        - .:/app
+
+networks:
+  unit-converter:
